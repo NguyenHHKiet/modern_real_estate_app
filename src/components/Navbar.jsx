@@ -23,7 +23,7 @@ const Navbar = () => (
     <Spacer />
     <Box>
       <Menu>
-        <MenuButton as={IconButton} icon={<FcMenu />} variant="outlined" color="red.400" />
+        <MenuButton as={IconButton} icon={<FcMenu />} variant={"outline"} color={"red.400"} />
         <MenuList>
           <Link href={"/"} passHref>
             <MenuItem icon={<FcHome />}>Home</MenuItem>
@@ -34,7 +34,7 @@ const Navbar = () => (
           <Link href={"/search?purpose=for-sale"} passHref>
             <MenuItem icon={<FcAbout />}>But Property</MenuItem>
           </Link>{" "}
-          <Link href={"/"} passHref>
+          <Link href={"/search?purpose=for-rent"} passHref>
             <MenuItem icon={<FiKey />}>Rent Property</MenuItem>
           </Link>
         </MenuList>
