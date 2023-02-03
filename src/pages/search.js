@@ -7,6 +7,7 @@ import SearchFilters from "@/components/SearchFilters";
 import Property from "@/components/Property";
 import noresult from "../../public/assets/images/noresult.svg";
 import { baseUrl, fetchApi } from "@/utils/fetchApi";
+import PropTypes from "prop-types";
 
 const Search = ({ properties }) => {
   const [searchFilter, setSearchFilter] = useState(false);
@@ -76,5 +77,9 @@ export async function getServerSideProps({ query }) {
     }
   };
 }
+
+Search.propTypes = {
+  properties: PropTypes.array
+};
 
 export default Search;

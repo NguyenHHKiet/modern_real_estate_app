@@ -4,6 +4,7 @@ import NProgress from "nprogress";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import Layout from "../components/Layout";
+import PropTypes from "prop-types";
 
 export default function App({ Component, pageProps }) {
   NProgress.configure({ showSpinner: false });
@@ -34,3 +35,8 @@ export default function App({ Component, pageProps }) {
     </>
   );
 }
+
+App.propTypes = {
+  Component: PropTypes.element,
+  pageProps: PropTypes.array
+};
