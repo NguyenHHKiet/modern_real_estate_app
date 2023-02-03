@@ -4,6 +4,8 @@ import { Box, Icon, Flex } from "@chakra-ui/react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
+import PropTypes from "prop-types";
+
 const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
 
@@ -52,6 +54,10 @@ const ImageScrollbar = ({ data }) => {
       ))}
     </ScrollMenu>
   );
+};
+
+ImageScrollbar.propTypes = {
+  data: PropTypes.array.isRequired
 };
 
 export default ImageScrollbar;

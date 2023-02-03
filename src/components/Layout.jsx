@@ -3,6 +3,7 @@ import { Box } from "@chakra-ui/react";
 
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import PropTypes from "prop-types";
 
 const Layout = ({ children }) => (
   <>
@@ -18,5 +19,9 @@ const Layout = ({ children }) => (
     </Box>
   </>
 );
+
+Layout.propTypes = {
+  children: PropTypes.element
+};
 
 export default Layout;

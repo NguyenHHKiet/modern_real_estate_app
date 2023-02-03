@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Flex, Box, Text, Button, Avatar } from "@chakra-ui/react";
+import { Flex, Box, Text, Avatar } from "@chakra-ui/react";
 import { BsGridFill } from "react-icons/bs";
 import { FaBed, FaBath } from "react-icons/fa";
 import { GoVerified } from "react-icons/go";
 import millify from "millify";
 
 import DefaultImage from "../../public/assets/images/house.jpg";
+import PropTypes from "prop-types";
 
 const Property = ({
   property: {
@@ -66,5 +67,9 @@ const Property = ({
     </Flex>
   </Link>
 );
+
+Property.propTypes = {
+  property: PropTypes.object
+};
 
 export default Property;

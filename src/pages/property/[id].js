@@ -8,6 +8,7 @@ import millify from "millify";
 
 import { baseUrl, fetchApi } from "../../utils/fetchApi";
 import ImageScrollbar from "../../components/ImageScrollbar";
+import PropTypes from "prop-types";
 
 const PropertyDetails = ({
   propertyDetails: {
@@ -131,3 +132,7 @@ export async function getServerSideProps({ params: { id } }) {
     }
   };
 }
+
+PropertyDetails.propTypes = {
+  propertyDetails: PropTypes.object.isRequired
+};

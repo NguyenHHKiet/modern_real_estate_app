@@ -4,6 +4,7 @@ import { Flex, Box, Text, Button } from "@chakra-ui/react";
 
 import { baseUrl, fetchApi } from "../utils/fetchApi";
 import Property from "@/components/Property";
+import PropTypes from "prop-types";
 
 const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, imageUrl }) => (
   <Flex flexWrap={"wrap"} justifyContent={"center"} alignItems={"center"} m={10}>
@@ -88,3 +89,18 @@ export async function getStaticProps() {
     }
   };
 }
+
+Banner.propTypes = {
+  purpose: PropTypes.string,
+  title1: PropTypes.string,
+  title2: PropTypes.string,
+  desc1: PropTypes.string,
+  desc2: PropTypes.string,
+  buttonText: PropTypes.string,
+  linkName: PropTypes.string,
+  imageUrl: PropTypes.string
+};
+Home.propTypes = {
+  propertiesForSale: PropTypes.object,
+  propertiesForRent: PropTypes.object
+};
