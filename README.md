@@ -38,5 +38,5 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## Deploy Demo
-[Check out our](https://modern-real-estate-app-66le.vercel.app/)
+[(https://modern-real-estate-app-66le.vercel.app/)]
 ![Real Estate](https://res.cloudinary.com/dhyyyqwaf/image/upload/v1675418123/image_rbnh2t.png)
