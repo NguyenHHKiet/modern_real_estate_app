@@ -28,43 +28,94 @@ const PropertyDetails = ({
   }
 }) => {
   return (
-    <Box>
+    <Box maxWidth={"1000px"} m={"auto"} p={4}>
       {" "}
       {photos && <ImageScrollbar data={photos} />}
-      <Box>
-        <Flex>
-          <Box>{isVerified && <GoVerified />}</Box>
-          <Text>
+      <Box width={"full"} p={6}>
+        <Flex paddingTop={2} alignItems={"center"}>
+          <Box paddingRight={3} color={"green.400"}>
+            {isVerified && <GoVerified />}
+          </Box>
+          <Text fontWeight={"bold"} fontSize={"lg"}>
             AED {price} {rentFrequency && `/${rentFrequency}`}
           </Text>
           <Spacer />
           <Avatar size={"sm"} src={agency?.logo?.baseUrl} />
         </Flex>
-        <Flex>
+        <Flex
+          alignItems={"center"}
+          p={1}
+          justifyContent={"space-between"}
+          w={"250px"}
+          color={"blue.400"}>
           {rooms}
           <FaBed /> | {baths}
           <FaBath /> | {millify(area)} sqft <BsGridFill />
         </Flex>
       </Box>
-      <Box>
-        <Text>{title}</Text>
-        <Text>{description}</Text>
+      <Box marginTop={2}>
+        <Text fontSize={"lg"} marginBottom={2} fontWeight={"bold"}>
+          {title}
+        </Text>
+        <Text lineHeight={2} color={"gray.600"}>
+          {description}
+        </Text>
       </Box>
-      <Flex>
-        <Flex>
+      <Flex flexWrap={"wrap"} textTransform={"uppercase"} justifyContent={"space-between"}>
+        <Flex
+          justifyContent={"space-between"}
+          w={"400px"}
+          borderBottom={"1px"}
+          borderColor={"gray.100"}
+          p={3}>
           <Text>Type</Text>
-          <Text>{type}</Text>
+          <Text fontWeight="bold">{type}</Text>
         </Flex>{" "}
-        <Flex>
+        <Flex
+          justifyContent={"space-between"}
+          w={"400px"}
+          borderBottom={"1px"}
+          borderColor={"gray.100"}
+          p={3}>
           <Text>Purpose</Text>
-          <Text>{purpose}</Text>
+          <Text fontWeight="bold">{purpose}</Text>
         </Flex>{" "}
-        <Flex>
-          <Text>Furnishing Status</Text>
-          <Text>{furnishingStatus}</Text>
-        </Flex>
+        {furnishingStatus && (
+          <Flex
+            justifyContent={"space-between"}
+            w={"400px"}
+            borderBottom={"1px"}
+            borderColor={"gray.100"}
+            p={3}>
+            <Text>Furnishing Status</Text>
+            <Text fontWeight="bold">{furnishingStatus}</Text>
+          </Flex>
+        )}
       </Flex>
-      <Box></Box>
+      <Box>
+        {amenities.length && (
+          <Text fontSize={"2xl"} fontWeight={"black"} marginTop={5}>
+            Facilities:
+          </Text>
+        )}
+        <Flex flexWrap={"wrap"}>
+          {amenities?.map((item) =>
+            item?.amenities?.map((amenity) => (
+              <Text
+                key={amenity.text}
+                fontWeight={"bold"}
+                color={"blue.400"}
+                fontSize={"lg"}
+                bg={"gray.200"}
+                m={1}
+                p={2}
+                borderRadius={5}>
+                {amenity.text}
+              </Text>
+            ))
+          )}
+        </Flex>
+      </Box>
     </Box>
   );
 };
